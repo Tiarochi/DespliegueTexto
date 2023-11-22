@@ -5,19 +5,11 @@ phases:
     runtime-versions:
       php: 8.2  # Versión de PHP que se utilizará
 
-  pre_build:
-    commands:
-      - echo "Iniciando la fase de pre-construcción"
-
   build:
     commands:
-      - echo "Iniciando la construcción"
-      # Ejecutar comandos de compilación aquí
-      - # Por ejemplo, instalar dependencias con Composer:
-      - composer install
+      - echo "Evaluando la sintaxis del código PHP"
+      - find . -name "*.php" -exec php -l {} \;  # Verificar la sintaxis de todos los archivos PHP
 
-  post_build:
-    commands:
-      - echo "Finalizando la construcción"
-      # Puedes ejecutar pruebas aquí, por ejemplo:
-      - phpunit  # Ejecutar pruebas unitarias si las tienes
+artifacts:
+  files:
+    - '**/*'
