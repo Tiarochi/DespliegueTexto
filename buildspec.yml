@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      php: 7.4  # Versión de PHP que se utilizará
+      php: 8.2  # Versión de PHP que se utilizará
 
   pre_build:
     commands:
