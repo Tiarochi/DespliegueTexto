@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 7.4  # Versión de PHP que se utilizará
+
+  pre_build:
+    commands:
+      - echo "Iniciando la fase de pre-construcción"
+
+  build:
+    commands:
+      - echo "Iniciando la construcción"
+      # Ejecutar comandos de compilación aquí
+      - # Por ejemplo, instalar dependencias con Composer:
+      - composer install
+
+  post_build:
+    commands:
+      - echo "Finalizando la construcción"
+      # Puedes ejecutar pruebas aquí, por ejemplo:
+      - phpunit  # Ejecutar pruebas unitarias si las tienes
